@@ -1,0 +1,40 @@
+# ---- Virtual environments (the 4k+ untracked files) ----
+.venv/
+venv/
+env/
+ENV/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+*.so
+
+# ---- Testing / coverage ----
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.tox/
+
+# ---- Environment / secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Generated database (rebuild with: bash _DB/build.sh) ----
+_DB/ecommerce.db
+*.db-wal
+*.db-shm
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

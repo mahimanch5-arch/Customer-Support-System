@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      ENV: development
+      LOG_JSON: "true"
+      # Default uses the bundled SQLite DB. For Postgres, set e.g.:
+      # DATABASE_URL: postgresql+asyncpg://support:support@db:5432/support
+      API_KEYS: "public:dev-public-key,agent:dev-agent-key"
+      RATE_LIMIT_PER_MINUTE: "120"
+    # The SQLite DB is rebuildable; mount the repo for live reload in dev if desired.
+    # volumes:
+    #   - ./_DB:/app/_DB:ro
+    restart: unless-stopped
